@@ -20,7 +20,7 @@ if ( ! class_exists( 'GHLCONNECTPRO_Settings_Page' ) ) {
 			$icon_url   	= 'dashicons-admin-plugins';
 			add_menu_page( $page_title, $menu_title, $capability, $menu_slug, $callback, $icon_url );
 			add_submenu_page('ib-ghlconnectpro', 'Opportunity/Pipeline', 'Opportunity/Pipeline', 'manage_options', 'ib-ghlconnectpro-opp-pipe', array($this, 'ghlconnectpro_submenu_callback_opp_pipe'));
-			add_submenu_page('ib-ghlconnectpro', 'Import Course', 'Import Course', 'manage_options', 'ib-ghlconnectpro-imp-crse', array($this, 'ghlconnectpro_submenu_callback_import_course'));
+			
 		}	
 		//for oppertunity and pipeline
 		public function ghlconnectpro_submenu_callback_opp_pipe() {
