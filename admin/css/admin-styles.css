@@ -216,3 +216,7 @@ input.ghl_connect.button {
     color: #fff;
     background-color: #f6861e;
 }
+p.glob-desc {
+    width: 184px;
+    height: 102px;
+}
