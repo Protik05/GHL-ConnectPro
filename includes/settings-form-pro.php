@@ -40,6 +40,17 @@
 		$connect_url = $auth_end_point . "?response_type=code&redirect_uri={$redirect_uri}&client_id={$ghlconnectpro_client_id}&scope={$scopes}";
 	}
 	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+		if (isset($_POST['global_tags'])) {
+			// Capture the raw input
+			$raw_tags = $_POST['global_tags'];
+
+			// Split the input string into an array, trimming whitespace and removing empty values
+			$ghlconnectpro_globTags = array_filter(array_map('trim', explode(',', $raw_tags)));
+			// Update the option with the array of tags
+			update_option('ghlconnectpro_globTags', $ghlconnectpro_globTags);
+			update_option('ghlconnectpro_global', $raw_tags);
+		}
+
 		if (isset($_POST['contact_register_btn'])) {
 			// Check if the checkbox is checked
 			$choice = isset($_POST["choice"]) && $_POST["choice"] === "yes" ? "yes" : "no";
@@ -56,14 +67,15 @@
 					$user_info = get_userdata($user->ID);
 
 					//send to ghl contact
-					$locationId = get_option( 'ghlconnect_locationId' );
+					$locationId = get_option( 'ghlconnectpro_locationId' );
 
 					$contact_data = array(
 						"locationId"    => $locationId,
 						"firstName"     => $user_info->first_name,
 						"lastName"      => $user_info->last_name,
 						"email"         => $user_info->user_email,
-						"phone"         =>  $user_info->billing_phone
+						"phone"         =>  $user_info->billing_phone,
+						"tags"          => "contact Sync"  //add tags for sync user.
 					);
 
 					// Get Contact Data
@@ -79,6 +91,8 @@
 			update_option('ghlconnectpro_invoice_check', $Invoicechoice);
 			
 		}
+
+
 	}
 ?>
 
@@ -127,7 +141,7 @@
 	<form method="post" class="form-table">
 		<?php $register_data=get_option('ghlconnectpro_contact_register_choice');
 		$invoice_data=get_option('ghlconnectpro_invoice_check');
-		
+		$globTags = get_option('ghlconnectpro_global');
 		?>
 		<table>
 			<tbody>
@@ -155,7 +169,16 @@
 						<input type="checkbox" name="choiceInvoice" <?php if ($invoice_data==='yes') echo "checked";?> value="yes">
 					</td>
 				</tr>			
-				
+				<tr>
+					<th scope="row">
+						<label>Add Global Tags?</label>
+					</th>
+					<td>
+						
+						<input type="text" name="global_tags" value="<?php echo esc_attr($globTags); ?>">
+						<p class="glob-desc">This tags get fired when there is no products specific tags.</p>
+					</td>
+				</tr>	
 			</tbody>	
 		</table>
 		<button class="ghl_connect button" type="submit" name="invoiceCreate">Update Settings</button>

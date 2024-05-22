@@ -25,7 +25,7 @@ if ( ! function_exists( 'ghlconnectpro_get_location_contact_data' ) ) {
 
 			$body = json_decode( wp_remote_retrieve_body( $response ) );
 			$contact = $body->contact;
-
+			update_option("woo_contact_id_pro",$contact->id);
 			return $contact;
 		}
 
@@ -77,9 +77,13 @@ if ( ! function_exists( 'ghlconnectpro_location_add_contact_tags' ) ) {
 		$ghlconnectpro_access_token = get_option( 'ghlconnectpro_access_token' );
 		$endpoint = GHLCONNECTPRO_ADD_CONTACT_TAGS_API . "{$contactId}/tags";
 		$ghl_version = GHLCONNECTPRO_ADD_CONTACT_TAGS_VERSION;
-
+		$result_tags = $tags;
+		$globTags = array('tags' => get_option('ghlconnectpro_globTags'));;
+		if(empty($tags['tags'])){
+			$result_tags=$globTags;
+		}
 		$request_args = array(
-			'body' 		=> $tags,
+			'body' 		=> $result_tags,
 			'headers' 	=> array(
 				'Authorization' => "Bearer {$ghlconnectpro_access_token}",
 				'Version' 		=> $ghl_version

@@ -50,10 +50,9 @@ function ghlconnectpro_connect_to_ghl_based_on_order( $order_id, $old_status, $n
         $product_id = $item->get_product_id();
         $product_meta = $products_meta[ $product_id ];
 
-        if ( ! empty( $product_meta['tags'] ) ) {
-            $tags = array( 'tags' => $product_meta['tags'] );
-            ghlconnectpro_location_add_contact_tags( $contactId, $tags );
-        }
+        $tags = array( 'tags' => $product_meta['tags'] );
+        ghlconnectpro_location_add_contact_tags( $contactId, $tags );
+    
 
 
         if ( ! empty( $product_meta['workflow'] ) ) {
