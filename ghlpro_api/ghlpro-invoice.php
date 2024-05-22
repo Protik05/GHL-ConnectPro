@@ -3,7 +3,7 @@ function create_ghlpro_invoices($order){
     $locationId = get_option('ghlconnectpro_locationId');
     $ghlconnectpro_access_token = get_option('ghlconnectpro_access_token' );
     $locationName=get_option('ghlconnectpro_loc_name');
-    $woo_contact_id=get_option('woo_contact_id');
+    $woo_contact_id=get_option('woo_contact_id_pro');
     $ghl_invoice_number=ghlpro_create_invoice_number();
     //fetch the items details
     if ($order) {
