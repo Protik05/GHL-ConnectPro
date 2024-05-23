@@ -1,12 +1,4 @@
 <?php
-function show_admin_notice_in_pipeline_creation($message,$type){
-    ?>    
-        <div class="notice notice-<?php echo esc_attr($type); ?> is-dismissible">
-            <p><?php echo esc_html($message); ?></p>
-        </div>
-    <?php
-}
-add_action('admin_notices', 'show_admin_notice_in_pipeline_creation', 10, 2);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Process the form data after submission
     $selectedContactID = $_POST["contactsList_names"];//contactid
@@ -27,16 +19,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	);
     
     $send=ghlconnectpro_get_create_oppertunity($data);
-    if($send!=''){
-        $type="success";
-        $message="Pipeline created successfully";
-        do_action('admin_notices', $message, $type);
-    }
-    else{
-        $type="error";
-        $message="Pipeline not created";
-        do_action('admin_notices', $message, $type);
-    }
+    // if($send!=''){
+    //     $type="success";
+    //     $message="Pipeline created successfully";
+    //     do_action('admin_notices', $message, $type);
+    // }
+    // else{
+    //     $type="error";
+    //     $message="Pipeline not created";
+    //     do_action('admin_notices', $message, $type);
+    // }
 
     
         
@@ -78,7 +70,17 @@ $contactsLists = ghlconnectpro_get_contactsList();
 
 
 ?>
+<div class="wrap main-con">
+    <div class="ghl-header">
+        <!-- Logo -->
+        <div class="logo">
+        <img src="<?php echo esc_url(plugins_url('images/ghlconnectpro-logo.png', __DIR__)); ?>" alt="GHLCONNECTPRO-Logo" />
 
+        </div>
+        
+        <h1>GHL Connect for WooCommerce Pro</h1>
+</div>
+<div class="opp-pipe">
 <form method="post">
     <table class="form-table">
         <tr>
@@ -145,7 +147,7 @@ $contactsLists = ghlconnectpro_get_contactsList();
         <input type='submit' class='ghl_connect button' value='Create'>
     </p>
 </form>
-
+</div>
 
 
 

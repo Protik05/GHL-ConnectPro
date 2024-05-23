@@ -89,7 +89,10 @@ if (!function_exists('ghlconnectpro_woocom_save_data')) {
     add_action('woocommerce_process_product_meta_simple', 'ghlconnectpro_woocom_save_data');
     add_action('woocommerce_process_product_meta_variable', 'ghlconnectpro_woocom_save_data');
     add_action( 'woocommerce_process_product_meta_subscription', 'ghlconnectpro_woocom_save_data' );
-
+   
+    add_action('woocommerce_process_product_meta_grouped', 'ghlconnectpro_woocom_save_data');
+    add_action('woocommerce_process_product_meta_external', 'ghlconnectpro_woocom_save_data');
+    add_action('woocommerce_process_product_meta_variable-subscription', 'ghlconnectpro_woocom_save_data'); // For variable subscription products
     // // Add nonce field to the WooCommerce product form
     add_action('woocommerce_product_options_general_product_data', 'ghlconnectpro_add_nonce_field');
 

@@ -176,8 +176,8 @@ button.ghl_connect.button {
     background-color: #f6861e;
 }
 
-button.ghl_connect_sync.button {
-    width: 100%;
+button.ghl_connectpro_sync.button {
+    width: 62%;
     padding: 10px -1px;
     display: inline-block;
     text-transform: uppercase;
@@ -219,4 +219,8 @@ input.ghl_connect.button {
 p.glob-desc {
     width: 184px;
     height: 102px;
+}
+
+.opp-pipe {
+    margin-left: 15px;
 }

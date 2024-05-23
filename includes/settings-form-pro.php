@@ -157,7 +157,7 @@
 						<p class="description"> ALL users are sync in GHL</p>
 						<?php }?>
 						<br>
-						<button class="ghl_connect_sync button" type="submit" name="contact_register_btn">Sync Users</button>
+						<button class="ghl_connectpro_sync button" type="submit" name="contact_register_btn">Sync Users</button>
 					
 					</td>
 				</tr>
@@ -174,7 +174,7 @@
 						<label>Add Global Tags?</label>
 					</th>
 					<td>
-						
+		
 						<input type="text" name="global_tags" value="<?php echo esc_attr($globTags); ?>">
 						<p class="glob-desc">This tags get fired when there is no products specific tags.</p>
 					</td>
