@@ -19,17 +19,17 @@ if ( ! class_exists( 'GHLCONNECTPRO_Settings_Page' ) ) {
 			$callback   	= array( $this, 'ghlconnectpro_page_content' );
 			$icon_url   	= 'dashicons-admin-plugins';
 			add_menu_page( $page_title, $menu_title, $capability, $menu_slug, $callback, $icon_url );
-			add_submenu_page('ib-ghlconnectpro', 'Opportunity/Pipeline', 'Opportunity/Pipeline', 'manage_options', 'ib-ghlconnectpro-opp-pipe', array($this, 'ghlconnectpro_submenu_callback_opp_pipe'));
+			// add_submenu_page('ib-ghlconnectpro', 'Opportunity/Pipeline', 'Opportunity/Pipeline', 'manage_options', 'ib-ghlconnectpro-opp-pipe', array($this, 'ghlconnectpro_submenu_callback_opp_pipe'));
 			
 		}	
+		// //for oppertunity and pipeline
+		// public function ghlconnectpro_submenu_callback_opp_pipe() {
+		// 	require_once plugin_dir_path( __FILE__ )."ghl-connect-pro-opp-pipe-display.php";
+		// }
 		//for oppertunity and pipeline
-		public function ghlconnectpro_submenu_callback_opp_pipe() {
-			require_once plugin_dir_path( __FILE__ )."ghl-connect-pro-opp-pipe-display.php";
-		}
-		//for oppertunity and pipeline
-		public function ghlconnectpro_submenu_callback_import_course() {
-			require_once plugin_dir_path( __FILE__ )."ghl-connect-pro-import-course.php";
-		}
+		// public function ghlconnectpro_submenu_callback_import_course() {
+		// 	require_once plugin_dir_path( __FILE__ )."ghl-connect-pro-import-course.php";
+		// }
 
         public function ghlconnectpro_page_content() {
             // check user capabilities to access the setting page.
@@ -57,6 +57,9 @@ if ( ! class_exists( 'GHLCONNECTPRO_Settings_Page' ) ) {
 							<h2 class="nav-tab-wrapper-vertical">
 								<a href="?page=ib-ghlconnectpro" class="nav-tab <?php if($tab===null):?>nav-tab-active<?php endif; ?>">Connect with GHL</a>
 								<a href="?page=ib-ghlconnectpro&tab=option" class="nav-tab <?php if($tab==='option'):?>nav-tab-active<?php endif; ?>">Trigger Options</a>
+								<a href="?page=ib-ghlconnectpro&tab=sync" class="nav-tab <?php if($tab==='sync'):?>nav-tab-active<?php endif; ?>">Sync Users</a>
+								<a href="?page=ib-ghlconnectpro&tab=gtag" class="nav-tab <?php if($tab==='gtag'):?>nav-tab-active<?php endif; ?>">Global Tags</a>
+								<a href="?page=ib-ghlconnectpro&tab=invoice" class="nav-tab <?php if($tab==='invoice'):?>nav-tab-active<?php endif; ?>">Invoice</a>
 							    <a href="?page=ib-ghlconnectpro&tab=support" class="nav-tab <?php if($tab==='support'):?>nav-tab-active<?php endif; ?>">Help</a>
 								<a href="?page=ib-ghlconnectpro&tab=license" class="nav-tab <?php if($tab==='license'):?>nav-tab-active<?php endif; ?>">License</a>
 							</h2>
@@ -67,6 +70,15 @@ if ( ! class_exists( 'GHLCONNECTPRO_Settings_Page' ) ) {
 							<?php switch($tab) :
 								case 'option':
 									require_once plugin_dir_path( __FILE__ )."/woo-trigger-form-pro.php";
+									break;
+								case 'sync':
+									require_once plugin_dir_path( __FILE__ )."/ghl-connect-pro-sync-users.php";
+									break;
+								case 'gtag':
+									require_once plugin_dir_path( __FILE__ )."/ghl-connect-pro-glob-tags.php";
+									break;
+								case 'invoice':
+									require_once plugin_dir_path( __FILE__ )."/ghl-connect-pro-invoice.php";
 									break;
 								case 'support':
 									require_once plugin_dir_path( __FILE__ )."/help-page-pro.php";

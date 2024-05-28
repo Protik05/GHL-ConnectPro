@@ -82,6 +82,20 @@ if (!function_exists('ghlconnectpro_woocom_save_data')) {
             update_post_meta($post_id, 'ghlconnectpro_location_tags', $ghlconnectpro_location_tags);
             update_post_meta($post_id, 'ghlconnectpro_location_workflow', $ghlconnectpro_location_workflow);
 
+            //for Grouped/bundle products.
+            $product_id = $post_id; // Replace with your product ID
+            // Get the product object
+            $product = wc_get_product($product_id);
+            // Check if the product is a grouped product
+            if ($product && $product->is_type('grouped')) {
+                // Get the children IDs of the grouped product
+                $children_ids = $product->get_children();
+                foreach ($children_ids as $child_id) {
+                    update_post_meta($child_id, 'ghlconnectpro_location_tags', $ghlconnectpro_location_tags);
+                    update_post_meta($child_id, 'ghlconnectpro_location_workflow', $ghlconnectpro_location_workflow);
+                }
+             
+            }       
         }
     }
 

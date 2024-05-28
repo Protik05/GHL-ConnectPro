@@ -4,7 +4,7 @@
  * Fired during plugin activation
  *
  * @link       https://https://www.ibsofts.com
- * @since      1.0.1
+ * @since      1.0.0
  *
  * @package    GHLCONNECTPRO
  * @subpackage GHLCONNECTPRO/includes
@@ -15,7 +15,7 @@
  *
  * This class defines all code necessary to run during the plugin's activation.
  *
- * @since      1.0.1
+ * @since      1.0.0
  * @package    GHLCONNECTPRO
  * @subpackage GHLCONNECTPRO/includes
  * @author     iB Softs <ibsofts@gmail.com>
@@ -27,7 +27,7 @@ class GHLCONNECTPRO_Activator {
 	 *
 	 * Long Description.
 	 *
-	 * @since    1.0.1
+	 * @since    1.0.0
 	 */
 	public static function activate() {
 

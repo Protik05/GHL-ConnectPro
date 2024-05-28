@@ -12,7 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ?>
         <h2>Enter License Key </h2>
         <form id="ghl-license-key-form1" method="post" action="">
-            <label for="license-key-input">License Key:</label>
             <input type="text" id="license-key-input" name="license_key" required value="<?php echo esc_attr($licShow); ?>">
             <input type="submit" value="Activate" class="ghl_connect button">
         </form>

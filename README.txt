@@ -4,7 +4,7 @@ Donate link: https://donate.stripe.com/14keXEbyJ2xp43SdQR
 Tags: ghl,GoHighLevel,Highlevel,crm,woocommerce
 Requires at least: 4.0
 Tested up to: 6.5.3
-Stable tag: 1.0.1
+Stable tag: 1.0.0
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -21,10 +21,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Specific Tag or Tags can be applied to that contact 
  * Specific Workflow or Workflows can be applied to that contact 
  * All the above are added in the ghl contact based on the Trigger Option you set.
-* Support for simple, variation & subscription product.
+* Support all types of products.
 * Sync All Wordpress Users to GHL CRM.
+* Set Global Tags and this tags get fired when there is no products specific tags. 
 * When someone purchases any products from woocommerce Invoice will be created in GHL CRM.
-*Add an option for the admin to set the opportunity/pipeline when the user signs up done.
 
 == Installation ==
 
@@ -53,15 +53,16 @@ Its an option where you can select your order status based on that after purches
 
 == Screenshots ==
 
-1.Connect with GHL account.
-2.Set your Trigger options you want after a successful product puchase.
-3.Inside the woocommerce products edit section set the Tags and Workflow for a particular products.
+1. Connect with GHL account.
+2. Set your Trigger options you want after a successful product puchase.
+3. Inside the woocommerce products edit section set the Tags and Workflow for a particular products.
 4. Help/Support page.
 
 == Changelog ==
-= 1.0.1 =
-Add an option for the admin to set the opportunity/pipeline when the user signs up done.
-
 = 1.0.0 =
-First version for GHL Connect for WooCommerce - Pro.
+Support all types of products.
+Sync All Wordpress Users to GHL CRM.
+Set Global Tags and this tags get fired when there is no products specific tags. 
+When someone purchases any products from woocommerce Invoice will be created in GHL CRM.
+
 

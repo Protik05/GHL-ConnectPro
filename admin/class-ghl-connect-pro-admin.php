@@ -4,7 +4,7 @@
  * The admin-specific functionality of the plugin.
  *
  * @link       https://https://www.ibsofts.com
- * @since      1.0.1
+ * @since      1.0.0
  *
  * @package    GHLCONNECTPRO
  * @subpackage GHLCONNECTPRO/admin
@@ -25,7 +25,7 @@ class GHLCONNECTPRO_Admin {
 	/**
 	 * The ID of this plugin.
 	 *
-	 * @since    1.0.1
+	 * @since    1.0.0
 	 * @access   private
 	 * @var      string    $plugin_name    The ID of this plugin.
 	 */
@@ -34,7 +34,7 @@ class GHLCONNECTPRO_Admin {
 	/**
 	 * The version of this plugin.
 	 *
-	 * @since    1.0.1
+	 * @since    1.0.0
 	 * @access   private
 	 * @var      string    $version    The current version of this plugin.
 	 */
@@ -43,7 +43,7 @@ class GHLCONNECTPRO_Admin {
 	/**
 	 * Initialize the class and set its properties.
 	 *
-	 * @since    1.0.1
+	 * @since    1.0.0
 	 * @param      string    $plugin_name       The name of this plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
@@ -57,7 +57,7 @@ class GHLCONNECTPRO_Admin {
 	/**
 	 * Register the stylesheets for the admin area.
 	 *
-	 * @since    1.0.1
+	 * @since    1.0.0
 	 */
 	public function enqueue_styles() {
 
@@ -81,7 +81,7 @@ class GHLCONNECTPRO_Admin {
 	/**
 	 * Register the JavaScript for the admin area.
 	 *
-	 * @since    1.0.1
+	 * @since    1.0.0
 	 */
 	public function enqueue_scripts() {
 
@@ -98,8 +98,8 @@ class GHLCONNECTPRO_Admin {
 		 */
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/ghl-connect-pro-admin.js', array( 'jquery' ), $this->version, false );
-		wp_enqueue_script( 'select2', plugins_url( 'js/select2.min.js', __FILE__ ) , array('jquery'), '1.0.1', true );
-        wp_enqueue_script( 'ghlconnectpro_admin_script', plugins_url( 'js/admin-scripts.js', __FILE__ ) , array('jquery'), '1.0.1', true );
+		wp_enqueue_script( 'select2', plugins_url( 'js/select2.min.js', __FILE__ ) , array('jquery'), '1.0.0', true );
+        wp_enqueue_script( 'ghlconnectpro_admin_script', plugins_url( 'js/admin-scripts.js', __FILE__ ) , array('jquery'), '1.0.0', true );
 	}
 
 }

@@ -177,8 +177,8 @@ button.ghl_connect.button {
 }
 
 button.ghl_connectpro_sync.button {
-    width: 62%;
-    padding: 10px -1px;
+    /* width: 100%;
+    padding: 10px -1px; */
     display: inline-block;
     text-transform: uppercase;
     font-weight: 500;
@@ -223,4 +223,8 @@ p.glob-desc {
 
 .opp-pipe {
     margin-left: 15px;
+}
+
+input#license-key-input {
+    width: 360px;
 }

@@ -6,7 +6,7 @@
  * This file is used to markup the admin-facing aspects of the plugin.
  *
  * @link       https://https://www.ibsofts.com
- * @since      1.0.1
+ * @since      1.0.0
  *
  * @package    GHLCONNECTPRO
  * @subpackage GHLCONNECTPRO/admin/partials

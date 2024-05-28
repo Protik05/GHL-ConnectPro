@@ -7,7 +7,7 @@
  * so that it is ready for translation.
  *
  * @link       https://https://www.ibsofts.com
- * @since      1.0.1
+ * @since      1.0.0
  *
  * @package    GHLCONNECTPRO
  * @subpackage GHLCONNECTPRO/includes
@@ -19,7 +19,7 @@
  * Loads and defines the internationalization files for this plugin
  * so that it is ready for translation.
  *
- * @since      1.0.1
+ * @since      1.0.0
  * @package    GHLCONNECTPRO
  * @subpackage GHLCONNECTPRO/includes
  * @author     iB Softs <ibsofts@gmail.com>
@@ -30,7 +30,7 @@ class GHLCONNECTPRO_i18n {
 	/**
 	 * Load the plugin text domain for translation.
 	 *
-	 * @since    1.0.1
+	 * @since    1.0.0
 	 */
 	public function load_plugin_textdomain() {
 

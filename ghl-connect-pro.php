@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              https://www.ibsofts.com
- * @since             1.0.1
+ * @since             1.0.0
  * @package           GHLCONNECTPRO
  *
  * @wordpress-plugin
  * Plugin Name:       GHL Connect for WooCommerce Pro
  * Plugin URI:        https://www.ibsofts.com/plugins/ghl-connect-pro
  * Description:       This plugin will connect the popular CRM goHighlevel(Go High Level) to the most popular content management software WordPress.
- * Version:           1.0.1
+ * Version:           1.0.0
  * Author:            iB Softs
  * Author URI:        https://www.ibsofts.com/
  * License:           GPL-2.0+
@@ -32,10 +32,10 @@ if ( ! defined( 'WPINC' ) ) {
 
 /**
  * Currently plugin version.
- * Start at version 1.0.1 and use SemVer - https://semver.org
+ * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'GHLCONNECTPRO_VERSION', '1.0.1' );
+define( 'GHLCONNECTPRO_VERSION', '1.0.0' );
 define( 'GHLCONNECTPRO_PLUGIN_BASENAME', plugin_basename( __DIR__ ) );
 define( 'GHLCONNECTPRO_LOCATION_CONNECTED', false );
 define( 'GHLCONNECTPRO_PATH', plugin_basename( __FILE__ ));
@@ -110,7 +110,7 @@ require_once plugin_dir_path( __FILE__ ) . 'ghl-connect-pro-definitions.php';
  * then kicking off the plugin from this point in the file does
  * not affect the page life cycle.
  *
- * @since    1.0.1
+ * @since    1.0.0
  */
 if ( ! function_exists( 'ghlconnectpro_run' ) ) {
 	function ghlconnectpro_run() {
